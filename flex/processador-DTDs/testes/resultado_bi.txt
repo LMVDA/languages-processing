@@ -1,0 +1,54 @@
+
+Elementos:
+
+:: Elemento autor ::
+	0 Atributos
+	0 Dependencias
+:: Elemento bi ::
+	0 Atributos
+	15 Dependencia(s): autor, biografia, data, depoente, editor, entrevistador, foto, morada, nascimento, notas, profissao, projecto, rel, titulo, transcritor
+:: Elemento biografia ::
+	0 Atributos
+	0 Dependencias
+:: Elemento data ::
+	3 Atributo(s): ano, dia, mes
+	0 Dependencias
+:: Elemento depoente ::
+	1 Atributo(s): estadocivil
+	0 Dependencias
+:: Elemento editor ::
+	0 Atributos
+	0 Dependencias
+:: Elemento entrevistador ::
+	0 Atributos
+	0 Dependencias
+:: Elemento escolaridade ::
+	0 Atributos
+	0 Dependencias
+:: Elemento foto ::
+	1 Atributo(s): ficheiro
+	0 Dependencias
+:: Elemento morada ::
+	0 Atributos
+	0 Dependencias
+:: Elemento nascimento ::
+	4 Atributo(s): ano, dia, mes, onde
+	0 Dependencias
+:: Elemento notas ::
+	0 Atributos
+	0 Dependencias
+:: Elemento profissao ::
+	0 Atributos
+	0 Dependencias
+:: Elemento projecto ::
+	0 Atributos
+	0 Dependencias
+:: Elemento rel ::
+	1 Atributo(s): tipo
+	0 Dependencias
+:: Elemento titulo ::
+	0 Atributos
+	0 Dependencias
+:: Elemento transcritor ::
+	0 Atributos
+	0 Dependencias

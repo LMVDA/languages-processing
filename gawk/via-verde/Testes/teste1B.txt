@@ -1,0 +1,21 @@
+Locais de saída: 
+
+	Braga Sul
+	Maia PV
+	Neiva S-N
+	Angeiras N-S
+	Freixieiro
+	Valongo
+	PQ A Sa Carn.I
+	Ermesinde PV
+	Aeroporto
+	Maia II
+	EN107
+	EN 205 PV
+	Neiva N-S
+	Lipor
+	Ponte Pedra
+	PQ Av. Central
+	Custoias
+	Povoa S-N
+	Ferreiros

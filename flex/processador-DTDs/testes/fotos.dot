@@ -1,0 +1,18 @@
+digraph dependencies {
+	"autor" [style=filled, fillcolor=white];
+	"facto" [style=filled, fillcolor=white];
+	foto -> autor;
+	foto -> facto;
+	foto -> legenda;
+	foto -> onde;
+	foto -> quando;
+	foto -> quem;
+	"foto" [style=filled, fillcolor=red4];
+	fotos -> autor;
+	fotos -> foto;
+	"fotos" [style=filled, fillcolor=orange];
+	"legenda" [style=filled, fillcolor=white];
+	"onde" [style=filled, fillcolor=white];
+	"quando" [style=filled, fillcolor=white];
+	"quem" [style=filled, fillcolor=white];
+}

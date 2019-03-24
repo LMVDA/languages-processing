@@ -1,0 +1,4 @@
+Gasto Mensal (em euros)
+00-LJ-11 		77.4
+45-NU-45 		10
+Total 			87.4

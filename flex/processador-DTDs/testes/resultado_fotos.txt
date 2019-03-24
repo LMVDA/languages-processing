@@ -1,0 +1,27 @@
+
+Elementos:
+
+:: Elemento autor ::
+	1 Atributo(s): tipo
+	0 Dependencias
+:: Elemento facto ::
+	0 Atributos
+	0 Dependencias
+:: Elemento foto ::
+	1 Atributo(s): ficheiro
+	6 Dependencia(s): autor, facto, legenda, onde, quando, quem
+:: Elemento fotos ::
+	0 Atributos
+	2 Dependencia(s): autor, foto
+:: Elemento legenda ::
+	0 Atributos
+	0 Dependencias
+:: Elemento onde ::
+	0 Atributos
+	0 Dependencias
+:: Elemento quando ::
+	1 Atributo(s): data
+	0 Dependencias
+:: Elemento quem ::
+	0 Atributos
+	0 Dependencias

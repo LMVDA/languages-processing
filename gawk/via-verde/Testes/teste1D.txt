@@ -1,0 +1,4 @@
+Gasto Mensal Parques(em euros)
+00-LJ-11 		6.35
+45-NU-45 		1.95
+Total 			8.3

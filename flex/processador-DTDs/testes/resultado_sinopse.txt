@@ -1,0 +1,66 @@
+
+Elementos:
+
+:: Elemento a ::
+	1 Atributo(s): href
+	0 Dependencias
+:: Elemento abstract ::
+	0 Atributos
+	2 Dependencia(s): image, p
+:: Elemento author ::
+	0 Atributos
+	0 Dependencias
+:: Elemento b ::
+	0 Atributos
+	0 Dependencias
+:: Elemento date ::
+	0 Atributos
+	0 Dependencias
+:: Elemento dd ::
+	0 Atributos
+	1 Dependencia(s): ul
+:: Elemento dl ::
+	0 Atributos
+	2 Dependencia(s): dd, dt
+:: Elemento dt ::
+	0 Atributos
+	1 Dependencia(s): b
+:: Elemento image ::
+	1 Atributo(s): href
+	0 Dependencias
+:: Elemento li ::
+	0 Atributos
+	0 Dependencias
+:: Elemento meta ::
+	0 Atributos
+	3 Dependencia(s): author, date, obs
+:: Elemento obs ::
+	0 Atributos
+	0 Dependencias
+:: Elemento ol ::
+	0 Atributos
+	1 Dependencia(s): li
+:: Elemento p ::
+	0 Atributos
+	2 Dependencia(s): a, b
+:: Elemento project ::
+	0 Atributos
+	0 Dependencias
+:: Elemento ref ::
+	1 Atributo(s): type
+	0 Dependencias
+:: Elemento section ::
+	3 Atributo(s): encterm, title, url
+	9 Dependencia(s): author, date, dl, image, meta, ol, p, section, ul
+:: Elemento sinopse ::
+	0 Atributos
+	5 Dependencia(s): author, date, project, text, title
+:: Elemento text ::
+	0 Atributos
+	2 Dependencia(s): abstract, section
+:: Elemento title ::
+	0 Atributos
+	0 Dependencias
+:: Elemento ul ::
+	0 Atributos
+	1 Dependencia(s): li

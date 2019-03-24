@@ -1,0 +1,7 @@
+Media de Pagamento
+				Portagens(euros/mes)		Parques(euros/mes)
+00-LJ-11			 1.82 				 3.17
+45-NU-45			 2.68 				 1.95
+Media Parcial			 1.88 				 2.77
+
+Media Total: 1.94 euros/mes

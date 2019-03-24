@@ -1,0 +1,107 @@
+%{
+	#include "module.h"
+
+	GTree * elementos;
+	Elemento * elementoActual;
+%}
+
+%x ELEMENT ELEMDEP ATTLIST ATTRIBUTE ATTNAME ATTTYPE ATTVALUE ENTITY
+%option stack
+
+%%
+
+	elementos = g_tree_new_full(compararChave, NULL, freeChave, freeElemento);
+	elementoActual = NULL;
+
+\<!ELEMENT					{	BEGIN ELEMENT;				}
+\<!ATTLIST					{	BEGIN ATTLIST;				}
+\<!ENTITY					{	BEGIN ENTITY;				}	
+<ATTLIST>[^ \n]+			{   
+	BEGIN ATTRIBUTE; 
+	elementoActual = (Elemento*) g_tree_lookup( elementos, yytext ); 
+}
+<ATTRIBUTE>\>				{	BEGIN INITIAL;	}
+<ATTRIBUTE>[^\>\na-zA-Z]	{	BEGIN ATTNAME;	}
+<ATTNAME>[^ \t]+			{	
+	insereAtributo(elementoActual, yytext);
+	BEGIN ATTTYPE;	
+}
+<ATTTYPE>[^ \t]+			{	BEGIN ATTVALUE;	}
+<ATTVALUE>\#FIXED" "[^ \>]+	{	BEGIN ATTRIBUTE;	}
+<ATTVALUE>\#REQUIRED		{	BEGIN ATTRIBUTE;	}
+<ATTVALUE>\#IMPLIED			{	BEGIN ATTRIBUTE; }
+<ATTVALUE>\"[^ \"]+\"		{	BEGIN ATTRIBUTE;	}
+<ELEMENT>\*?\>				{	BEGIN INITIAL;				} 
+<ELEMENT>EMPTY				{ }
+<ELEMENT>[^ E\(\n]+			{	
+	elementoActual = insereElemento(elementos, yytext);
+}
+<ELEMENT>\(					{	yy_push_state(ELEMDEP);	}
+<ELEMDEP>\#PCDATA			{ 							}
+<ELEMDEP>[^, \#\|\(\)\*\?]+	{	
+	insereDependencia(elementoActual, yytext);
+}
+<ELEMDEP>\(					{	yy_push_state(ELEMDEP); }
+<ELEMDEP>\)					{	yy_pop_state();				}
+<ENTITY>\>					{	BEGIN INITIAL; }
+<*>(.|\n)					{	;							}
+%%
+
+
+int yywrap(){
+	return 1;
+}
+
+int main(int argc, char * argv[]){
+	int hflag = 0;
+	int gflag = 0;
+	int index;
+	int c;
+
+	while ((c = getopt (argc, argv, "gh")) != -1) {
+		switch (c){
+			case 'g':
+			gflag = 1;
+			break;
+			case 'h':
+			hflag = 1;
+			break;
+			case '?':
+			if (isprint (optopt))
+			printf("Opcao desconhecida `-%c' %s -h para ver ajuda.\n", optopt, argv[0]);
+			else
+			printf("Caractere de opcao desconhecido `\\x%x' %s -h para ver ajuda.\n", optopt, argv[0]);
+			return 1;
+			default:
+			abort();
+		}
+	}
+
+	index = optind;
+
+	if (hflag == 1){
+		printf("\n%s [-h] [-g ficheiro [elemento]]\n\n", argv[0]);
+		printf("\t-h\t\t\t\t\tPara ver a ajuda\n");
+		printf("\t-g\tficheiro.dot [elemento]\t\tGera o grafo de dependências do ficheiro DTD de input no output ficheiro.g.");
+		printf("\n\t\t\t\t\t\tCaso o elemento seja definido, apenas o grafo de dependências do elemento será gerado.\n");
+		printf("\n\nex: %s -g grafoDependencias.dot fotos\n\n", argv[0]);
+	}
+	else {
+		yylex();
+
+		if (gflag) {
+			int numberOfArguments = argc-index;
+
+			if (numberOfArguments == 1) { gerarDependenciasGlobais(elementos, argv[index]); } 
+			else if (numberOfArguments == 2) { gerarDependencias(elementos, argv[index], argv[index+1]); }
+			else { printf("Numero de argumentos invalidos"); }
+		}
+		else {
+			printf("\nElementos:\n\n");
+			g_tree_foreach( elementos, printElemento, NULL );
+			g_tree_destroy( elementos );
+		}
+	}
+
+	return 0;
+}

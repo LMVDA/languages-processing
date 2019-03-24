@@ -1,0 +1,80 @@
+
+
+                             Nome Pessoa | Ocorrências
+----------------------------------------------------------------------
+                                     Ana | 1
+                          Ana da Áustria | 2
+                          Ana de Áustria | 2
+                   Cardeal Jules Mazarin | 1
+                       Cardeal Richelieu | 1
+                    Catarina de Bragança | 1
+                         Charles Le Brun | 1
+                                 Colbert | 2
+              Filipe I, Duque de Orleães | 1
+                               Filipe IV | 1
+                    Filipe IV de Espanha | 1
+              François-Michel le Tellier | 1
+                         Giulio Mazarino | 1
+                        Hugues de Lionne | 1
+                        Isabel da França | 1
+                   Jean-Baptiste Colbert | 2
+                     Jean-Baptiste Lully | 1
+                           Jules Mazarin | 2
+  Louis de Rouvroy, Duque de Saint-Simon | 1
+                         Louis-Dieudonné | 1
+                                    Luís | 6
+                               Luís XIII | 5
+                                Luís XIV | 7
+                                 Luís XV | 1
+        Luís XV, Luís, Duque da Bretanha | 1
+                 Luís, Duque da Borgonha | 1
+           Luís, Grande Delfim de França | 1
+                            Maria Teresa | 1
+                 Maria Teresa de Áustria | 1
+                                Mazarino | 3
+                                 Moliere | 1
+                         Nicolas Fouquet | 1
+                         Oliver Cromwell | 1
+                      Pierre Paul Riquet | 1
+----------------------------------------------------------------------
+                             Total Único | 34
+
+
+                                  Cidade | Ocorrências
+----------------------------------------------------------------------
+                                    Lyon | 1
+                                   Paris | 1
+                               Rousillon | 1
+                   Saint-Germain-en-Laye | 1
+                       Saint-Jean-de-Luz | 1
+                               Versalhes | 2
+----------------------------------------------------------------------
+                             Total Único | 6
+
+
+                                   País | Ocorrências
+----------------------------------------------------------------------
+                                Espanha | 5
+                                 França | 14
+                             Inglaterra | 1
+                                Navarra | 1
+                Países Baixos Espanhóis | 1
+                               Portugal | 1
+----------------------------------------------------------------------
+                            Total Único | 6
+
+
+                                     Ano | Ocorrências
+----------------------------------------------------------------------
+                                    1638 | 2
+                                    1643 | 2
+                                    1648 | 1
+                                    1651 | 1
+                                    1658 | 1
+                                    1660 | 1
+                                    1661 | 2
+                                    1665 | 1
+                                    1681 | 1
+                                    1715 | 1
+----------------------------------------------------------------------
+                             Total Único | 10
