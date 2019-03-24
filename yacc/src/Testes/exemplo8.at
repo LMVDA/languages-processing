@@ -1,0 +1,12 @@
+start() {
+    atom x <- 1;
+    atom y <- 2;
+    atom z <- 2;
+
+    if (x==1 && y==(z/x)) {
+        print("| X é igual a 1 e Y é igual a Z a dividir por X |");
+        if( x == y*z || y == x*z) {
+            print("| X é igual à multiplicação de Y por Z, ou, Y é igual à multiplicação a X por Z |");
+        }
+    }
+}

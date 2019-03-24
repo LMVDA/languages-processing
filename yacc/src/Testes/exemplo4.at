@@ -1,0 +1,23 @@
+start(){
+    // Contar e imprimir os numeros impares de uma sequencia de naturais
+    atom lista[5];
+    atom lidos <- 0;
+    atom impares <- 0;
+
+    lista[0] <- 1;
+    lista[1] <- 2;
+    lista[2] <- 3;
+    lista[3] <- 4;
+    lista[4] <- 5;
+    
+    while (lidos < 5){
+        if(lista[lidos] % 2 == 1) {
+            impares <- impares + 1;
+            print(lista[lidos]);
+        }
+        lidos <- lidos + 1;
+    }
+
+    print("Total impares: ");
+    print(impares);
+}

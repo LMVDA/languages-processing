@@ -1,0 +1,58 @@
+pushi 0
+start
+pushn 5
+pushi 0
+pushi 0
+while_0:
+pushl 6
+pushi 5
+inf
+jz while_fim_0
+pushs "Insira um inteiro: "
+writes
+read
+atoi
+storel 5
+pushfp
+pushi 0
+padd
+pushl 6
+pushl 5
+storen
+
+pushl 6
+pushi 1
+add
+
+storel 6
+jump while_0
+while_fim_0:
+
+pushl 6
+pushi 1
+sub
+
+storel 6
+pushs "| "
+writes
+while_1:
+pushl 6
+pushi 0
+supeq
+jz while_fim_1
+pushfp
+pushi 0
+padd
+pushl 6loadn
+writei
+
+pushl 6
+pushi 1
+sub
+
+storel 6
+pushs " | "
+writes
+jump while_1
+while_fim_1:
+stop

@@ -1,0 +1,38 @@
+start(){
+    // ler 4 numeros e dizer se podem ser os lados de um quadrado
+    
+    atom l1;
+    atom l2;
+    atom l3;
+    atom l4;
+
+    print("Insira primeiro numero:");
+    l1 <- read();
+    
+    print("Insira segundo numero:");
+    l2 <- read();
+    
+    print("Insira terceiro numero:");
+    l3 <- read();
+    
+    print("Insira quarto numero:");
+    l4 <- read();
+
+    if (l1 == l2) {
+        if (l1 == l3) {
+            if (l1 == l4) {
+                print("Pode ser um quadrado!");
+            }
+            else {
+                print("Não pode ser um quadrado!");
+            }
+        }
+        else {
+            print("Não pode ser um quadrado!");
+        }
+    } 
+    else {
+        print("Não pode ser um quadrado!");
+    }
+
+}

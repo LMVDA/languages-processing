@@ -1,0 +1,75 @@
+pushi 0
+start
+pushn 5
+pushi 0
+pushi 0
+pushfp
+pushi 0
+padd
+pushi 0
+pushi 1
+storen
+pushfp
+pushi 0
+padd
+pushi 1
+pushi 2
+storen
+pushfp
+pushi 0
+padd
+pushi 2
+pushi 3
+storen
+pushfp
+pushi 0
+padd
+pushi 3
+pushi 4
+storen
+pushfp
+pushi 0
+padd
+pushi 4
+pushi 5
+storen
+while_0:
+pushl 5
+pushi 5
+inf
+jz while_fim_0
+pushfp
+pushi 0
+padd
+pushl 5loadn
+pushi 2
+mod
+
+pushi 1
+equal
+jz if_fim_0
+
+pushl 6
+pushi 1
+add
+
+storel 6
+pushfp
+pushi 0
+padd
+pushl 5loadn
+writei
+if_fim_0:
+
+pushl 5
+pushi 1
+add
+
+storel 5
+jump while_0
+while_fim_0:
+pushs "Total impares: "
+writes
+pushl 6
+writei
+stop

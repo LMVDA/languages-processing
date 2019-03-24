@@ -1,0 +1,41 @@
+pushi 0
+start
+pushi 1
+pushi 2
+pushi 2
+pushl 0
+pushi 1
+equal
+
+pushl 1
+pushl 2
+pushl 0
+div
+
+equal
+
+mul
+jz if_fim_1
+pushs "| X é igual a 1 e Y é igual a Z a dividir por X |"
+writes
+pushl 0
+pushl 1
+pushl 2
+mul
+
+equal
+
+pushl 1
+pushl 0
+pushl 2
+mul
+
+equal
+
+add
+jz if_fim_0
+pushs "| X é igual à multiplicação de Y por Z, ou, Y é igual à multiplicação a X por Z |"
+writes
+if_fim_0:
+if_fim_1:
+stop

@@ -1,0 +1,43 @@
+start(){
+    //  ler e armazenar os elementos de um vetor de comprimento N; imprimir os valores por ordem decrescente ap´osfazer a ordenacao do array por trocas diretas.
+
+    atom lista[5];
+    atom num;
+    atom c, d, cond;
+    atom lidos <- 0;
+    atom total <- 5;
+    atom tmp;
+
+    while (lidos < total){
+        print("Insira um inteiro: ");
+        num <- read();
+        lista[lidos] <- num;
+        lidos <- lidos + 1;
+    }
+
+    lidos <- 0;
+
+    while (lidos < total){
+        cond <- total - lidos;
+        cond <- cond - 1;
+        d <- 0;
+
+        while (d < cond) {
+            if (lista[d] > lista[d+1]){
+                tmp <- lista[d];
+                lista[d] <- lista[d+1];
+                lista[d+1] <- tmp;
+            }
+            d <- d + 1;
+        }
+        lidos <- lidos + 1;
+    }
+
+    lidos <- 0;
+    print("| ");
+    while (lidos < 5){
+        print(lista[lidos]);
+        lidos <- lidos + 1;
+        print(" | ");
+    }
+}

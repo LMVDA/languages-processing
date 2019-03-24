@@ -1,0 +1,21 @@
+pushi 0
+start
+pushi 5
+pushi 5
+equal
+pushi 1
+swap
+sub
+
+pushi 1
+swap
+sub
+jz else_0
+pushs "5 é igual a 5"
+writes
+jump if_fim_0
+else_0:
+pushs "5 não é igual a 5"
+writes
+if_fim_0:
+stop

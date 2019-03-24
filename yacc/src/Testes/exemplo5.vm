@@ -1,0 +1,145 @@
+pushi 0
+start
+pushn 5
+pushi 0
+pushi 0
+pushi 0
+pushi 0
+pushi 0
+pushi 5
+pushi 0
+while_0:
+pushl 9
+pushl 10
+inf
+jz while_fim_0
+pushs "Insira um inteiro: "
+writes
+read
+atoi
+storel 5
+pushfp
+pushi 0
+padd
+pushl 9
+pushl 5
+storen
+
+pushl 9
+pushi 1
+add
+
+storel 9
+jump while_0
+while_fim_0:
+
+pushi 0
+storel 9
+while_2:
+pushl 9
+pushl 10
+inf
+jz while_fim_2
+
+pushl 10
+pushl 9
+sub
+
+storel 8
+
+pushl 8
+pushi 1
+sub
+
+storel 8
+
+pushi 0
+storel 7
+while_1:
+pushl 7
+pushl 8
+inf
+jz while_fim_1
+pushfp
+pushi 0
+padd
+pushl 7loadn
+pushfp
+pushi 0
+padd
+pushl 7
+pushi 1
+add
+loadn
+sup
+jz if_fim_0
+
+pushfp
+pushi 0
+padd
+pushl 7loadn
+storel 11
+pushfp
+pushi 0
+padd
+pushl 7
+pushfp
+pushi 0
+padd
+pushl 7
+pushi 1
+add
+loadn
+storen
+pushfp
+pushi 0
+padd
+pushl 7
+pushi 1
+add
+
+pushl 11
+storen
+if_fim_0:
+
+pushl 7
+pushi 1
+add
+
+storel 7
+jump while_1
+while_fim_1:
+
+pushl 9
+pushi 1
+add
+
+storel 9
+jump while_2
+while_fim_2:
+
+pushi 0
+storel 9
+pushs "| "
+writes
+while_3:
+pushl 9
+pushi 5
+inf
+jz while_fim_3
+pushfp
+pushi 0
+padd
+pushl 9loadn
+writei
+
+pushl 9
+pushi 1
+add
+
+storel 9
+pushs " | "
+writes
+jump while_3
+while_fim_3:
+stop

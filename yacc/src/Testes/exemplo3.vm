@@ -1,0 +1,35 @@
+pushi 0
+start
+pushi 5
+pushi 1
+pushi 0
+pushi 0
+while_0:
+pushl 2
+pushl 0
+inf
+jz while_fim_0
+pushs "Insira um inteiro:"
+writes
+read
+atoi
+storel 3
+
+pushl 1
+pushl 3
+mul
+
+storel 1
+
+pushl 2
+pushi 1
+add
+
+storel 2
+jump while_0
+while_fim_0:
+pushs "Produtorio: "
+writes
+pushl 1
+writei
+stop

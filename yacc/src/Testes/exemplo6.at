@@ -1,0 +1,22 @@
+start(){
+    // ler e armazenar N numeros num array; imprimir os valores por ordem inversa
+
+    atom lista[5];
+    atom num;
+    atom lidos <- 0;
+
+    while (lidos < 5){
+        print("Insira um inteiro: ");
+        num <- read();
+        lista[lidos] <- num;
+        lidos <- lidos + 1;
+    }
+
+    lidos <- lidos - 1;
+    print("| ");
+    while (lidos >= 0){
+        print(lista[lidos]);
+        lidos <- lidos - 1;
+    print(" | ");
+    }
+}

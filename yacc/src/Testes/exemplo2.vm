@@ -1,0 +1,47 @@
+pushi 0
+start
+pushi 0
+pushi 0
+pushi 1
+pushi 0
+pushs "Introduza o numero de inteiros a ler: "
+writes
+read
+atoi
+storel 0
+pushs "Insira um inteiro: "
+writes
+read
+atoi
+storel 1
+while_0:
+pushl 2
+pushl 0
+inf
+jz while_fim_0
+pushs "Insira um inteiro: "
+writes
+read
+atoi
+storel 3
+pushl 3
+pushl 1
+inf
+jz if_fim_0
+
+pushl 3
+storel 1
+if_fim_0:
+
+pushl 2
+pushi 1
+add
+
+storel 2
+jump while_0
+while_fim_0:
+pushs "O valor minimo -> "
+writes
+pushl 1
+writei
+stop

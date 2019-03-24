@@ -1,0 +1,18 @@
+start(){
+    // ler N (constante do programa) números e calcular e imprimir o seu produtorio
+    
+    atom N <- 5;
+    atom produtorio <- 1;
+    atom lidos <- 0;
+    atom lido;
+
+    while (lidos < N){
+        print("Insira um inteiro:");
+        lido <- read();
+        produtorio <- produtorio * lido;
+        lidos <- lidos + 1;
+    }
+
+    print ("Produtorio: ");
+    print (produtorio);
+}

@@ -1,0 +1,83 @@
+pushi 0
+start
+pushi 0
+pushi 0
+pushi 0
+pushi 0
+pusha funcao_mensagemEntrada
+call
+nop
+
+pusha funcao_lerNumero
+call
+nop
+pushg 0
+
+storel 0
+
+pusha funcao_lerNumero
+call
+nop
+pushg 0
+
+storel 1
+
+pusha funcao_lerNumero
+call
+nop
+pushg 0
+
+storel 2
+
+pusha funcao_lerNumero
+call
+nop
+pushg 0
+
+storel 3
+pushl 0
+pushl 1
+equal
+jz else_0
+pushl 0
+pushl 2
+equal
+jz else_0
+pushl 0
+pushl 3
+equal
+jz else_0
+pushs "Pode ser um quadrado!"
+writes
+jump if_fim_0
+else_0:
+pushs "Não pode ser um quadrado!"
+writes
+if_fim_0:
+jump if_fim_0
+else_0:
+pushs "Não pode ser um quadrado!"
+writes
+if_fim_0:
+jump if_fim_0
+else_0:
+pushs "Não pode ser um quadrado!"
+writes
+if_fim_0:
+stop
+funcao_mensagemEntrada:
+nop
+pushs "Vamos testar lados de um quadrado!"
+writes
+return
+funcao_lerNumero:
+nop
+pushi 0
+pushs "Insira numero:"
+writes
+read
+atoi
+storel 0
+pushl 0
+storeg 0
+return

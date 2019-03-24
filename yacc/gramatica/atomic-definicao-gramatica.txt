@@ -1,0 +1,73 @@
+GIC = <
+    T = {VOID, ATOM, ID, START, AT, IF, ELSE, WHILE, READ, PRINT,
+            STRING, AND, OR, GEQ, LEQ, EQU, DIF, NUM, RETURN,
+            '(', ')', '{', '}', '[', ']', ';', ',', '!',
+            '<', '>', '+', '-', '*', '/', '%'},
+    N = {Atomic, Funcoes, Funcao, Start, Body, ListaDeclars, LinhaDeclar, 
+            Declars, Declar, Insts, Inst, Condicional, Ciclica, Atribuicao, 
+            Invocacao, Leitura, Escrita, Condicao, Exp, Termo, Fator, Var, Return},
+    S = Atomic,
+    P = {
+            p0: Atomic       --> Funcoes Start
+            p1: Funcoes      --> Funcoes Funcao
+            p2:              |
+            p3: Funcao       --> VOID ID '('')' '{' Body '}'
+            p4:              | ATOM ID '('')' '{' Body '}'
+            p5: Start        --> START '('')' '{' Body '}'
+            p6: Body         --> ListaDeclars Insts Return
+            p7: ListaDeclars --> ListaDeclars LinhaDeclar
+            p8:              |
+            p9: LinhaDeclar  --> ATOM Declars ';'
+            p10: Declars     --> Declars ',' Declar
+            p11:             | Declar
+            p12: Declar      --> ID                  
+            p13:             | ID AT Exp                 
+            p14:             | ID '[' Exp ']'            
+            p15:             | ID '[' Exp ']' '[' Exp ']'
+            p16: Insts       --> Insts Inst          
+            p17:             |
+            p18: Inst        --> Condicional
+            p19:             | Ciclica           
+            p20:             | Atribuicao        
+            p21:             | Invocacao         
+            p22:             | Leitura           
+            p23:             | Escrita           
+            p24: Condicional --> IF '(' Condicao ')' '{' Insts '}'            
+            p25:             | IF '(' Condicao ')' '{' Insts '}' ELSE '{' Insts '}'
+            p26: Ciclica     --> WHILE '(' Condicao ')' '{' Insts '}'
+            p27: Atribuicao  --> Var AT Exp
+            p28: Invocacao   --> ID '(' ')' ';'
+            p29: Leitura     --> ID AT READ '(' ')' ';'
+            p30: Escrita     --> PRINT '(' Exp ')' ';' 
+            p31:             | PRINT '(' STRING ')' ';'
+            p32: Condicao    --> Condicao AND Condicao  
+            p33:             | Condicao OR Condicao          
+            p34:             | '(' Condicao ')'
+            p35:             | '!' Condicao                  
+            p36:             | Exp '<' Exp                   
+            p37:             | Exp '>' Exp                   
+            p38:             | Exp LEQ Exp                   
+            p39:             | Exp GEQ Exp                   
+            p40:             | Exp DIF Exp                   
+            p41:             | Exp EQU Exp                   
+            p42:             | Exp                           
+            p43: Exp         --> Termo              
+            p44:             | Exp '+' Termo             
+            p45:             | Exp '-' Termo             
+            p46:             | '(' Exp ')'
+            p47: Termo       --> Fator              
+            p48:             | Termo '*' Fator           
+            p49:             | Termo '/' Fator           
+            p50:             | Termo '%' Fator           
+            p51:             | '(' Termo ')'
+            p52: Fator       --> NUM                
+            p53:             | Var                       
+            p54:             | ID '(' ')'                
+            p55:             | READ '(' ')'              
+            p56: Var         --> ID                 
+            p57:             | ID '[' Exp ']'            
+            p58:             | ID '[' Exp ']' '[' Exp ']'
+            p59: Return      --> RETURN Exp ';'     
+            p60:             |
+    }
+>

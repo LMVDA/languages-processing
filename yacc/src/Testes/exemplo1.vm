@@ -1,0 +1,56 @@
+pushi 0
+start
+pushi 0
+pushi 0
+pushi 0
+pushi 0
+pushs "Insira primeiro numero:"
+writes
+read
+atoi
+storel 0
+pushs "Insira segundo numero:"
+writes
+read
+atoi
+storel 1
+pushs "Insira terceiro numero:"
+writes
+read
+atoi
+storel 2
+pushs "Insira quarto numero:"
+writes
+read
+atoi
+storel 3
+pushl 0
+pushl 1
+equal
+jz else_0
+pushl 0
+pushl 2
+equal
+jz else_0
+pushl 0
+pushl 3
+equal
+jz else_0
+pushs "Pode ser um quadrado!"
+writes
+jump if_fim_0
+else_0:
+pushs "Não pode ser um quadrado!"
+writes
+if_fim_0:
+jump if_fim_0
+else_0:
+pushs "Não pode ser um quadrado!"
+writes
+if_fim_0:
+jump if_fim_0
+else_0:
+pushs "Não pode ser um quadrado!"
+writes
+if_fim_0:
+stop
